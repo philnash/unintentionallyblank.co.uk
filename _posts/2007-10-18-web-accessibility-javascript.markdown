@@ -1,0 +1,33 @@
+---
+layout: post
+title: Web Accessibility -- Javascript
+wordpress_id: 157
+wordpress_url: http://www.unintentionallyblank.co.uk/2007/10/18/web-accessibility-javascript/
+date: 2007-10-18 01:19:52 +01:00
+---
+<p>Continuing in my series of posts on <a href="http://www.unintentionallyblank.co.uk/2007/09/17/web-accessibility-not-just-for-the-blind/">different things to think about when considering web accessibility</a> this week I want to look at JavaScript.</p>
+
+<p>I actually had some inspiration in this post from my girlfriend. I accidentally left JavaScript disabled one night after doing some testing on a site and came home the next day to be told there was "something wrong with the internet." I quickly realised what had happened and rectified the situation, but the sites that she thought had broken may surprise you. Three major ones caught my attention and there's a fourth I'd like to mention as well.</p>
+
+<h3>Sites That Rely On JavaScript</h3>
+
+<dl>
+<dt><a href="http://www.hotmail.com">Windows Live Mail</a> (formerly Hotmail)</dt>
+<dd><p>First up is a huge disappointment. Hotmail, and, following it now, Windows Live Mail, is used by millions around the world. <strong>Try to access your mail without JavaScript enabled and you get nothing</strong>. Well, not nothing, you get a <a href="https://login.live.com/jsDisabled.srf?lc=1033">message telling you JavaScript is required</a>. No help though, no helpful links and certainly no way of logging on without JavaScript enabled. Taking a closer look at the login page and it turns out that the whole page is just one JavaScript file that is run as the page is loaded.</p>
+<p>JavaScript can help to enhance programs like webmail, all the big providers use JavaScript and <abbr title="Asynchronous JavaScript and XML">AJAX</abbr> to speed up the service and make it seem more like a desktop client like Outlook, but where's the fall back for Windows Live Mail? <a href="http://www.gmail.com">GMail</a> gives you the option for an <abbr title="Hyper Text Markup Language">HTML</abbr> only version that works perfectly well without JavaScript. Live users can't even get to the Live help section when JavaScript is disabled to find out what's wrong!</p></dd>
+<dt><a href="http://www.nationwide.co.uk">Nationwide Building Society</a></dt>
+<dd><p>Visiting the Nationwide to do some online banking without JavaScript enabled seems OK to start with, but <strong>click on "Sign On" and you are presented with a blank page</strong>. No sign of what has gone wrong. It turns out that the blank page you are met with is merely performing a JavaScript redirect to another page, when the redirect doesn't fire, nothing else happens. This sort of thing could easily be done by the server rather than the browser, but that choice leaves <strong>users locked out of their bank</strong>.</p></dd>
+<dt><a href="http://www.facebook.com">Facebook</a></dt>
+<dd><p>Popular social network Facebook has a popular feature known as the Wall, where you can post messages to your friends. Visiting Facebook and navigating around without JavaScript enabled is fine, but posting to someone's Wall falls apart, <strong>you just can't</strong>. These days, Wall posts are handled by AJAX and your post appears on your friend's Wall without the page refreshing. Previously, I remember posts being processed normally, by submitting the form and the page refreshing, something that can certainly be accomplished without JavaScript.</p>
+<p>I am particularly disappointed with Facebook for that fact. In a recent post I recommended that the <a href="http://www.unintentionallyblank.co.uk/2007/07/06/learning-ajax-lesson-1-dont-use-ajax/">first rule of AJAX was not to use it</a>. In fact <strong>you should always be able to complete essential tasks without JavaScript or AJAX first</strong>, then you can enhance the site employing those technologies for those who have access to them. Facebook had non JavaScript functionality in place, but <strong>instead of enhancing it, they replaced it</strong> with JavaScript dependent functionality.</p></dd>
+<dt><a href="http://www.myspace.com">MySpace</a></dt>
+<dd><p>I actually discovered MySpace's problem while listening to one of the open mic slots at <a href="http://www.futureofwebapps.com">Future Of Web Apps</a>. <a href="http://www.abilitynet.org.uk/">AbilityNet</a> were talking about accessibility and web 2.0 sites when MySpace came up. They showed an interview with a blind user who spoke about their experience with using a screenreader and MySpace. If you use MySpace you will know that you can edit who your top friends, those that appear on your profile, are. <strong>The only way to do this is by dragging and dropping</strong> (powered by JavaScript) them into place. This is not a problem for those with JavaScript enabled and a mouse, but blind users are unable to use a mouse or even access the friends to move them in any way. Screen reading software can manage some JavaScript too, but visual positions on a screen are no use to a blind user and the lack of any fall back through normal HTML, say by entering a number for the position you want your friend to appear on your list, leaves users with <a href="http://www.businessweek.com/the_thread/techbeat/archives/2006/03/tom_is_not_my_f.html">Tom as their top friend</a>.</p></dd>
+</dl>
+
+<h3>Why Does This Matter?</h3>
+
+<p><strong>Not all internet users have JavaScript enabled</strong>. I'm not just referring to girlfriends of developers who occasionally get stuck without a clue what is going on either. Some people and companies (therefore all users online at work in those companie, though they shouldn't be using Facebook anyway!) prefer to surf without JavaScript enabled for security reasons, some people don't have JavaScript enabled browsers and others can't use certain methods that JavaScript makes available (drag and drop when you can't see or can't use a mouse, for example).</p>
+
+<p><a href="http://www.w3schools.com/browsers/browsers_stats.asp">The w3schools site collects browser statistics</a> from their logs, including JavaScript. While they aren't the most accurate (the site is mainly used by people learning about web technologies), they do show that a small percentage of users do not have JavaScript enabled, 6% at the last count in January 2007.</p>
+
+<p>The important thing is that your website functionality doesn't need JavaScript. <strong>Everything important should and can be done by the server first</strong>, you can then enhance the experience with JavaScript for those who have it available, instead of locking out those who don't.</p>
