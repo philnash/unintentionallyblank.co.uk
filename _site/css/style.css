@@ -100,6 +100,33 @@ footer{
   padding:50px 0 30px;
 }
 
+#disclaimer{
+  position: absolute;
+  top:0;
+  left:0;
+  right:0;
+  background: #ccc;
+  border-bottom: 5px solid #333;
+  padding:5px 0;
+}
+#disclaimer p{
+  width:96%;
+  max-width: 800px;
+  padding:0 2%;
+  margin:0 auto;
+  color:#333;
+  font-size:1.2em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+}
+#disclaimer p a{
+  color:#333;
+  border-bottom: 1px dotted #333;
+}
+#disclaimer p a:hover{
+  border-bottom-style: solid;
+}
+
 /*** Typography ***/
 a{
   color:#fff;
