@@ -327,9 +327,12 @@ div#ads ul li{
     margin-right: 0;
     width: 79%;
   }
-  div#ads{
+  div#ads,
+  div#ads div{
     position: static;
     margin:0 auto;
+    height: auto;
+    float:none;
   }
   div#ads h2,
   div#ads ul li{
