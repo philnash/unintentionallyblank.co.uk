@@ -1,4 +1,4 @@
---- 
+---
 layout: post
 title: Radio Airplay
 wordpress_id: 50
@@ -10,4 +10,4 @@ date: 2006-10-16 12:05:07 +01:00
 <p>However impartial I would love to be, this is my begging section. I hope that you like my band's music, but please vote for them to be played again! It will help us no end to reach more music lovers and get our music out there. You can listen to more of our music at <a href="http://www.myspace.com/hammervsthesnake" title="Hammer VS The Snake at myspace">myspace</a> too. I hope you like it.</p>
 <p>Oh, and if you vote for us, I will also love you forever. Thanks</p>
 
-<ins>Update: Hammer VS The Snake were <em>meant</em> to be played last night on Xfm, however it seemed the DJ changed her mind and played the unsigned band that were scheduled for Wednesday. Keep listening to Xfm all this week to hear HVTS come up and in the meantime, you can still <a href="http://www.xfm.co.uk/article.asp?id=105880">vote for us</a> to be played on Friday too.</ins>
+<p><ins>Update: Hammer VS The Snake were <em>meant</em> to be played last night on Xfm, however it seemed the DJ changed her mind and played the unsigned band that were scheduled for Wednesday. Keep listening to Xfm all this week to hear HVTS come up and in the meantime, you can still <a href="http://www.xfm.co.uk/article.asp?id=105880">vote for us</a> to be played on Friday too.</ins></p>

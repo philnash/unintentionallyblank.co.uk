@@ -1,0 +1,352 @@
+/*** Reset  ***/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-size:62.5%;
+  background: #121212;
+  color:#f5f5f5;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*** Layout ***/
+header{
+  padding:50px 0 30px;
+  border-bottom:10px solid #333;
+}
+header h1 a{
+  display: block;
+}
+section#main{
+  background: #212121;
+  padding:40px 0;
+  border-top:5px solid #121212;
+  border-bottom:5px solid #121212;
+  position: relative;
+}
+section#main article{
+  width: 96%;
+  padding:0 2%;
+  max-width:800px;
+  margin:0 auto;
+}
+section#main article header{
+  padding:0;
+  width:100%;
+  border:none;
+  margin:0 auto;
+}
+section#main article div.content{
+  width:65%;
+  margin:0 0 2em 22%;
+  border-bottom:5px solid #333;
+}
+section#main article header p.meta{
+  float:left;
+  clear:left;
+  width: 21%;
+}
+section#main article header p.author{
+  border-bottom: 5px solid #333;
+  padding-bottom: 0.25em;
+  margin-bottom:1em;
+}
+section#main article footer{
+  border:none;
+  padding:0;
+  margin-left:22%;
+  text-align: left;
+}
+
+footer{
+  text-align: center;
+  padding:50px 0 30px;
+}
+
+/*** Typography ***/
+a{
+  color:#fff;
+  border-bottom: 1px dotted #CCC;
+  text-decoration: none;
+  -moz-transition:color 0.25s;
+  -webkit-transition:color 0.25s;
+  -o-transition:color 0.25s;
+  transition:color 0.25s;
+}
+a:hover{
+  border-style: solid;
+}
+h1,
+section#main h1,
+section#main article div.content h2,
+section#main article div.content h3,
+section#main article footer h3,
+footer{
+  font-family:"Vollkorn", Georgia, serif;
+}
+header h1{
+  max-width: 800px;
+  width:96%;
+  padding:0 2%;
+  margin: 0 auto;
+}
+header h1 a{
+  font-size:8em;
+  text-decoration: none;
+  background: transparent;
+  border-bottom:none;
+}
+header h1 a:hover{
+  color:#ccc;
+  border:none;
+}
+header p{
+  max-width: 800px;
+  width:96%;
+  padding:0 2%;
+  margin:0 auto;
+  font-size:2.1em;
+}
+section#main,
+section#main article footer{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow:0 1px 0 #000;
+}
+
+section#main article header h1{
+  font-size:3.6em;
+  margin-bottom:0.5em;
+  width: 100%;
+  padding: 0;
+  line-height: 1.2;
+}
+section#main article header h1 a{
+  font-size: 1em;
+}
+section#main article header p{
+  padding:0;
+}
+section#main article header p.meta{
+  font-size:1.6em;
+  line-height: 1.7;
+}
+section#main article div.content{
+  font-size:1.8em;
+  line-height: 1.5;
+}
+section#main article div.content h2,
+section#main article div.content h3{
+  font-size:1.5em;
+  margin-bottom: 0.75em;
+}
+section#main article div.content p,
+section#main article div.content ul,
+section#main article div.content ol,
+section#main article div.content dl{
+  margin-bottom: 1em;
+}
+section#main article div.content dl dd{
+  margin:0 0 1em 1em;
+}
+section#main article div.content ins{
+  text-decoration: none;
+  font-style: italic;
+}
+section#main article div.content del{
+  text-decoration: line-through;
+}
+section#main article div.content code{
+  font-family:Consolas, “Lucida Console”, Monaco, monospace;
+  background: #333;
+  border:1px solid #CCC;
+  font-size:0.9em;
+}
+section#main article div.content pre{
+  display: block;
+  width:auto;
+  overflow: auto;
+  border:1px solid #CCC;
+  background: #333;
+  margin-bottom: 1em;
+  padding: 5px;
+  white-space: pre;
+}
+section#main article div.content pre code{
+  border:none;
+}
+section#main article footer{
+  line-height: 1.7;
+}
+section#main article footer h3{
+  font-size:1.5em;
+}
+section#main ol.post-list{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+section#main ol.post-list li{
+  clear:both;
+}
+section#main ol.post-list li article header h1{
+  width:58%;
+  float:right;
+  margin-right: 21%;
+}
+section#main div.pagination{
+  clear:both;
+  max-width: 800px;
+  padding: 0 2%;
+  width: 96%;
+  margin:0 auto 2em;
+  font-size:1.6em;
+  position: relative;
+}
+section#main div.pagination p .previous{
+  position: absolute;
+  left:2%;
+  top: 0;
+  z-index: 10;
+}
+section#main div.pagination p .next{
+  position: absolute;
+  right:2%;
+  top: 0;
+  z-index: 10;
+}
+section#main div.pagination p .page_number{
+  display: block;
+  text-align: center;
+  width:100%;
+}
+footer{
+  font-size:1.6em;
+  border-top:10px solid #333;
+}
+footer p{
+  margin-bottom: 1em;
+}
+
+/*** Ads ***/
+div#ads{
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  max-width: 800px;
+  width: 96%;
+  height: 0;
+  margin: 0 auto 0 -400px;
+  padding: 0 2%;
+}
+div#ads div{
+  float:right;
+  clear:right;
+}
+div#ads h2{
+  font-size:1.6em;
+  margin-bottom: 0.5em;
+}
+div#ads ul li{
+  font-size:1.4em;
+  margin-bottom: 0.5em;
+}
+
+@media only screen and (max-width : 800px){
+  header h1 a{
+    font-size:6em;
+  }
+  section#main article header h1{
+    text-align: left;
+    font-size:3.2em;
+  }
+  section#main ol.post-list li article header h1{
+    margin-right: 0;
+    width: 79%;
+  }
+  div#ads{
+    position: static;
+    margin:0 auto;
+  }
+  div#ads h2,
+  div#ads ul li{
+    float:none;
+    width: 100%;
+  }
+}
+@media only screen and (max-width : 500px){
+  header h1{
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  header h1 a{
+    font-size:4em;
+  }
+  header p{
+    text-align: center;
+    font-size: 1.6em;
+  }
+  section#main article header h1{
+    text-align: left;
+    font-size:2.8em;
+  }
+  section#main article header p.meta{
+    float:none;
+    clear:none;
+    width: 100%;
+    text-align: left;
+  }
+  section#main article div.content,
+  section#main article footer{
+    margin-left: 0;
+    width: 100%;
+  }
+  section#main article div.content h2,
+  section#main article div.content h3{
+    font-size:1.2em;
+  }
+  section#main ol.post-list li article header h1{
+    float:none;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  section#main ol.post-list li article header p.meta{
+    margin-bottom: 1em;
+  }
+}

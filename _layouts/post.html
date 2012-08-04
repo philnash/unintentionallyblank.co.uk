@@ -1,3 +1,24 @@
 ---
 layout: default
 ---
+
+<article>
+  <header>
+    <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+    <p class="meta date">{{ page.date | date: "%b %d, %Y" }}</p>
+    <p class="meta author">by Phil Nash</p>
+  </header>
+
+  <div class="content">
+    {{ page.content }}
+  </div>
+
+  <footer>
+    <h3>Related posts</h3>
+    {% for post in site.related_posts limit:3 %}
+    <ul>
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    </ul>
+    {% endfor %}
+  </footer>
+</article>

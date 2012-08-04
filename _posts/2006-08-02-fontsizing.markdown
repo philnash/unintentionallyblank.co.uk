@@ -5,7 +5,7 @@ wordpress_id: 10
 wordpress_url: http://www.unintentionallyblank.co.uk/2006/08/02/fontsizing/
 date: 2006-08-02 13:08:39 +01:00
 ---
-<ins><strong>While this post has some interesting JavaScript in, there are also a lot of mistakes. Please have a look at <a href="http://www.unintentionallyblank.co.uk/2007/11/09/fontsizer-reloaded-changing-font-sizes-with-javascript/">fontSizer v2.0</a> which is much, much better!</strong></ins>
+<p><ins><strong>While this post has some interesting JavaScript in, there are also a lot of mistakes. Please have a look at <a href="http://www.unintentionallyblank.co.uk/2007/11/09/fontsizer-reloaded-changing-font-sizes-with-javascript/">fontSizer v2.0</a> which is much, much better!</strong></ins></p>
 
 <p>Accessibility matters. I am trying to make this site as accessible as I can in order to learn the methods and set an example. My most recent task has been to add the links you will see at the top right of the page, links to increase or decrease the font size. Initially I searched for a quick bit of code to do this, but none of the results gave me exactly what I wanted, so I decided to do it myself, thus immersing myself in the <acronym title="Document Object Mode">DOM</acronym> for the first time.</p>
 <p>My requirements were a script that changed the text size on a  page without loading a different stylesheet or forcing a reload and that once the text size was altered this would persist throughout the site. I also wanted to continue using relative font size attributes (this site's font sizes are all done using ems so that <acronym title="Internet Explorer">IE</acronym> users may resize using the browser controls). My searches found scripts that changed pixel sizes and only worked for the current page, so I got to work.</p>
@@ -75,4 +75,4 @@ echo $arr[$_COOKIE['fs']]; ?&gt;em; }
 <p>Please test out the functionality yourself, if there are any problems with it <a href="http://www.unintentionallyblank.co.uk/contact/">let me know</a>. If you have any tips or other thoughts too, feel free to comment.</p>
 <p>Finally, if you want to use this code yourself, here is the code: <a id="p13" href="http://www.unintentionallyblank.co.uk/fontsizer.zip" title="Fontsizer">Download fontsizer</a>.</p>
 
-<ins>Edit: I don't think the link was working, sorry! Things are fixed now, you can download the fontsizer if you want to have a go with it.</ins>
+<p><ins>Edit: I don't think the link was working, sorry! Things are fixed now, you can download the fontsizer if you want to have a go with it.</ins></p>

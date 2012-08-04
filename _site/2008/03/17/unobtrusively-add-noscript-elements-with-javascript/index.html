@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Unobtrusively Add NOSCRIPT Elements With JavaScript</title>
+
+  <meta name="author" content="Phil Nash">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">Unintentionally Blank</a></h1>
+    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+  </header>
+  <section id="main">
+    <article>
+  <header>
+    <h1><a href="/2008/03/17/unobtrusively-add-noscript-elements-with-javascript/">Unobtrusively Add NOSCRIPT Elements With JavaScript</a></h1>
+    <p class="meta date">Mar 17, 2008</p>
+    <p class="meta author">by Phil Nash</p>
+  </header>
+
+  <div class="content">
+    <p>I had a giggle this weekend thanks to a <a href="http://twitter.com/codepo8/statuses/771721379">Christian Heilemann tweet</a>. Using a <a href="http://my.opera.com/hallvors/blog/2008/03/13/noscript-for-nerds-stuff-that-disappears?cid=4880054">JavaScript <code class="inline">document.write</code> to print out a <code class="inline">&lt;noscript&gt;</code> element</a> is beyond believable. The whole thing is its own paradox, <code class="inline">document.write</code> wll only fire if JavaScript is enabled and <code class="inline">&lt;noscript&gt;</code> can only be seen when JavaScript is disabled, the fact that the ad script that was responsible for the script also left the tag open and messed up the rest of the site only compounds the whole thing.</p>
+
+<p>Stunning!</p>
+
+  </div>
+
+  <footer>
+    <h3>Related posts</h3>
+    
+    <ul>
+      <li><a href="/2007/10/18/web-accessibility-javascript/">Web Accessibility -- Javascript</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2006/08/17/the-dom-again-a-style-sheet-switcher/">The DOM again - A Style Sheet Switcher</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
+    </ul>
+    
+  </footer>
+</article>
+
+  </section>
+  <footer>
+    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
+    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
+  </footer>
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-144643-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

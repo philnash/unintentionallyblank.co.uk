@@ -1,0 +1,16 @@
+---
+layout: page
+title: About
+wordpress_url: http://www.unintentionallyblank.co.uk/about/
+permalink: /about/
+---
+
+<h2>Phil Nash</h2>
+
+<p>Phil Nash is a web developer at <a href="http://mintdigital.com">Mint Digital</a> specialising in Ruby, Rails, HTML, JavaScript and CSS.</p>
+
+<p>He also <a rel="me" href="http://twitter.com/philnash">tweets a lot</a>, plays rugby, <a rel="me" href="http://www.last.fm/user/Nashlegend">loves music</a>, drinks beer and <a rel="me" href="http://github.com/philnash">codes in his spare time</a>.</p>
+
+<h2>Unintentionally Blank</h2>
+
+<p>This site was set up as Phil started to learn web development and has a lot of his old code and opinions. You can now find more recent writing at <a rel="me" href="http://philnash.co.uk">philnash.co.uk</a> or on <a href="http://logicalfriday.com">Logical Friday</a>.</p>

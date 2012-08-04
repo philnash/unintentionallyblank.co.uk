@@ -2,5 +2,40 @@
 layout: default
 title: Unintentionally Blank Test
 ---
+<ol class="post-list">
+  {% for post in paginator.posts %}
+    <li>
+      <article>
+        <header>
+          <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+          <p class="meta date">{{ post.date | date: "%b %d, %Y" }}</p>
+        </header>
+      </article>
+    </li>
+  {% endfor %}
+</ol>
+<div class="pagination">
+  <p>
+    {% if paginator.previous_page %}
+      {% if paginator.previous_page == 1 %}
+        <a href="/" class="previous">Previous</a>
+      {% else %}
+        <a href="/page/{{paginator.previous_page}}/" class="previous">Previous</a>
+      {% endif %}
+    {% endif %}
+    <span class="page_number ">Page: {{paginator.page}} of {{paginator.total_pages}}</span>
+    {% if paginator.next_page %}
+      <a href="/page/{{paginator.next_page}}/" class="next ">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </p>
+</div>
 
-<p>This is a test</p>
+
+<div id="ads">
+  <div>
+    <h2>Featured links</h2>
+    ### ADS ###
+  </div>
+</div>

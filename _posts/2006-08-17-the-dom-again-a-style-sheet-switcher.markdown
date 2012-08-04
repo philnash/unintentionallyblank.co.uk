@@ -66,4 +66,4 @@ for (var i=0; i&lt;stylesheets.length; i++) {
 &lt;a href="javascript:setStyleSheet('other')"&gt;Other&lt;/a&gt;</code></pre>
 <h3>More To Come</h3>
 <p>That's all for today, enjoy swapping your stylesheets around with the code so far, I will tackle the remaining requirements (automatically populated drop down box and graceful degradation) in another post.</p>
-<ins>Update: see the remaining tasks finished off in <a href="http://www.unintentionallyblank.co.uk/2006/08/18/stylesheet-switcher-part-2/">Stylesheet Switcher part 2</a>.</ins>
+<p><ins>Update: see the remaining tasks finished off in <a href="http://www.unintentionallyblank.co.uk/2006/08/18/stylesheet-switcher-part-2/">Stylesheet Switcher part 2</a>.</ins></p>

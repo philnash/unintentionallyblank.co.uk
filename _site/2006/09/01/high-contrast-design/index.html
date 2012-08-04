@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>High Contrast Design</title>
+
+  <meta name="author" content="Phil Nash">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">Unintentionally Blank</a></h1>
+    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+  </header>
+  <section id="main">
+    <article>
+  <header>
+    <h1><a href="/2006/09/01/high-contrast-design/">High Contrast Design</a></h1>
+    <p class="meta date">Sep 01, 2006</p>
+    <p class="meta author">by Phil Nash</p>
+  </header>
+
+  <div class="content">
+    <p>Accessibility is not just about blind users who use screenreading software to hear websites. More than a year and a half ago Joe Clark wrote an article for A List Apart under the name <a href="http://alistapart.com/articles/lowvision">Big, Stark and Chunky</a>. It brought to light a different group of web users that need to be considered when making your site accessible. There are groups of users who aren't blind, but do have visual impairments, they don't use screenreaders, instead tend to increase the text size on websites or use magnifiers to view the web. Joe's article goes on to describe how a site should be designed to accomodate these users and how <abbr title="Cascading Style Sheets">CSS</abbr> can help. Light on dark text, single columns, simple navigation and large fonts are the keys to the design we need.</p>
+<p>In order to increase awareness of these techniques (and show off my own <a href="http://www.unintentionallyblank.co.uk/2006/08/30/stylesheet-switcher-part-3-revenge-of-ie/">style sheet switcher</a>) I tore apart my site's design today in order to come up with a high contrast design that would be more accessible for visually impaired users. You can view the vastly different design by selecting "High Contrast" from the dropdown menu at the top right of this page (unless you don't have javascript enabled).</p>
+<p>Look out for more new designs appearing in the design menu when I get around to blowing the dust off my copy of Fireworks and making some pretty backgrounds. For now though, appreciate that if your site uses dark, 10 pixel high text on a light background, some users will not be able to read it. Consider an alternative stylesheet, it's not that hard and it will give more people chance to see what you have to say.</p>
+<p>One final point, due to my entirely standards based site, I only had to create a new style sheet and give it a link in the head element of my page. The mark up did not change at all, another bonus for web standards.</p>
+
+  </div>
+
+  <footer>
+    <h3>Related posts</h3>
+    
+    <ul>
+      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2007/10/18/web-accessibility-javascript/">Web Accessibility -- Javascript</a></li>
+    </ul>
+    
+  </footer>
+</article>
+
+  </section>
+  <footer>
+    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
+    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
+  </footer>
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-144643-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

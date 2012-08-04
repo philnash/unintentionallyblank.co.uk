@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Nationwide Takes A Step Forward</title>
+
+  <meta name="author" content="Phil Nash">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">Unintentionally Blank</a></h1>
+    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+  </header>
+  <section id="main">
+    <article>
+  <header>
+    <h1><a href="/2008/04/22/the-nationwide-takes-a-step-forward/">The Nationwide Takes A Step Forward</a></h1>
+    <p class="meta date">Apr 22, 2008</p>
+    <p class="meta author">by Phil Nash</p>
+  </header>
+
+  <div class="content">
+    <p>It seems like a long time since I wrote about <a href="http://www.unintentionallyblank.co.uk/2007/10/18/web-accessibility-javascript/">the importance of making websites work without JavaScript</a>, a post that uncovered the <a href="http://www.nationwide.co.uk">Nationwide building society</a> locking customers without JavaScript enabled out of their site with nothing but a blank page to look at. The post elicited <a href="http://www.unintentionallyblank.co.uk/2007/10/18/web-accessibility-javascript/#comment-11751">a response</a> from <a href="http://accessify.com/">Ian Lloyd</a> from the Nationwide web team, saying that they would look into the issue.</p>
+
+<p>While it has been a long time before I noticed any difference, an online banking site can't be changed up that quickly, in the last month or so I did notice a difference to the site. Jumping immediately to my "disable JavaScript" button I proceeded to try to sign on to the online banking section. I was met with a message:</p>
+
+<blockquote cite="https://olb2.nationet.com/default.asp"><p>Nationwide's Internet Banking requires JavaScript and cookies to be enabled. It appears that your browser does not support JavaScript, or you have disabled it. Please re-enable JavaScript or try accessing this site using a different browser.</p></blockquote>
+
+<p>The Nationwide have taken the first step towards accessibility for those without JavaScript enabled, a <code class="inline">&lt;noscript&gt;</code> element prints out the above text. While I don't claim any knowledge of the stringent security measures that banks must take, I am still quite sure that JavaScript should not be necessary to log on. To make sure of this, I checked with my other online bank, the <a href="http://www.hsbc.co.uk">HSBC</a>. I was able to log on without JavaScript enabled.</p>
+
+<h3>Small Steps</h3>
+
+<p>While a <code class="inline">&lt;noscript&gt;</code> element really is the least anyone can do by notifying users that they can't use the site without JavaScript, it is a start. As I said above, changing an online banking system is not a trivial matter, so I appreciate what the Nationwide have done so far. Let's hope that this change can inspire further work at the Nationwide, and anywhere else where JavaScript is required.</p>
+
+  </div>
+
+  <footer>
+    <h3>Related posts</h3>
+    
+    <ul>
+      <li><a href="/2007/10/18/web-accessibility-javascript/">Web Accessibility -- Javascript</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2007/11/19/javascript-accessibility-matters/">JavaScript Accessibility Matters!</a></li>
+    </ul>
+    
+  </footer>
+</article>
+
+  </section>
+  <footer>
+    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
+    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
+  </footer>
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-144643-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>

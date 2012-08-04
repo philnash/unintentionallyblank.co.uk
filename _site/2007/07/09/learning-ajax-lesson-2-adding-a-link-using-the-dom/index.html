@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Learning AJAX: Lesson 2 - Adding A Link Using The DOM</title>
+
+  <meta name="author" content="Phil Nash">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="/">Unintentionally Blank</a></h1>
+    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+  </header>
+  <section id="main">
+    <article>
+  <header>
+    <h1><a href="/2007/07/09/learning-ajax-lesson-2-adding-a-link-using-the-dom/">Learning AJAX: Lesson 2 - Adding A Link Using The DOM</a></h1>
+    <p class="meta date">Jul 09, 2007</p>
+    <p class="meta author">by Phil Nash</p>
+  </header>
+
+  <div class="content">
+    <p>Having made my feelings about <a href="http://www.unintentionallyblank.co.uk/2007/07/06/learning-ajax-lesson-1-dont-use-ajax/">not using <abbr title="Asynchronous Javascript And XML">AJAX</abbr></a> before creating a site that can be used fully without it, I have moved on to the next part of my example. Previously, I had a <a href="http://test.unintentionallyblank.co.uk/randomquote.php">random quote generator</a> that displayed a different quote when you refreshed the page. My aim is to use AJAX techniques to enable you to display a new quote without refreshing the page, but by clicking a link instead. To do so we will need to do some <abbr title="Document Object Model">DOM</abbr> scripting.</p>
+
+<h3>The Markup Doesn't Change</h3>
+
+<p>Currently, <a href="http://test.unintentionallyblank.co.uk/randomquote.php">the example</a> does not have a link to click to replace the quote with a new one. We could add one into the markup so that it could trigger our javascript function that we are still to write, but if a user without javascript enabled visited our page then there would be a useless, broken link. From here on in, the markup for the page will stay the same and everything is to be added dynamically by javascript.</p>
+
+<h3>The <code class="inline">addJSLink</code> Function</h3>
+
+<p>I created a function called <code class="inline">addJSLink(elementID,onClickFunction,linkText)</code> which takes three parameters:</p>
+<dl>
+<dt>elementID</dt>
+<dd>The ID of the element we want to add the link to.</dd>
+<dt>onClickFunction</dt>
+<dd>The function we want the added link to perform.</dd>
+<dt>linkText</dt>
+<dd>The text for the link.</dd>
+</dl>
+<p>Take a look at <a href="http://test.unintentionallyblank.co.uk/ajax2.js">the commented code</a> and see what I have done. I didn't have to use the parameters, I could have built the options straight into the function, but this script is more useful this way. Why? It can be used to add any link, any onClick function and any link text you want. Feel free to do so!</p>
+
+<h3><code class="inline">addJSLink</code> In Action</h3>
+
+<p>I suppose I told a small lie when I said I wasn't going to change the markup at all. The only change I have made to the original example has been to add the link to the javascript to the head of the page, <em>nothing else</em> has changed. So check out the <a href="http://test.unintentionallyblank.co.uk/randomquote2.php">random quote generator with added javascript link</a> and keep an eye out for the next part of this series.</p>
+
+  </div>
+
+  <footer>
+    <h3>Related posts</h3>
+    
+    <ul>
+      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2006/08/02/fontsizing/">First Go With The DOM - Changing Font Sizes</a></li>
+    </ul>
+    
+    <ul>
+      <li><a href="/2006/08/18/stylesheet-switcher-part-2/">Stylesheet Switcher - Part 2</a></li>
+    </ul>
+    
+  </footer>
+</article>
+
+  </section>
+  <footer>
+    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
+    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
+  </footer>
+
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-144643-2']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
+</html>
