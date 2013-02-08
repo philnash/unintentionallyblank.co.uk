@@ -3,7 +3,7 @@ GEM
   specs:
     api_cache (0.2.3)
     dalli (2.1.0)
-    rack (1.4.1)
+    rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
     rack-protection (1.2.0)
