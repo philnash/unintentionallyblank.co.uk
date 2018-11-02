@@ -13,22 +13,11 @@ TLA_URL = 'http://www.text-link-ads.com/xml.php?k=VPS9QNEO50UUUYN5Y7W3&l=rails-t
 
 ['/', '/page/:number/?'].each do |url|
   get url do
-    tla = APICache.get(TLA_URL,
-      :fail => '[]', :cache => 3600, :period => 0, :valid => :forever
-    )
-    tla = JSON.parse(tla)
-    str = "<ul>"
-    tla.each do |link|
-      str << "<li>#{link['BeforeText']}<a href='#{link['URL']}'>#{link['Text']}</a>#{link['AfterText']}</li>"
-    end
-    str << '</ul>'
     if params[:number]
-      file = File.read("_site/page#{params[:number]}/index.html")
+      return File.read("_site/page#{params[:number]}/index.html")
     else
-      file = File.read('_site/index.html')
+      return File.read('_site/index.html')
     end
-    file.gsub!('### ADS ###', str)
-    file
   end
 end
 
