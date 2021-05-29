@@ -1,107 +1,202 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Multiple WordPress Loops: Back To Normality</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Multiple WordPress Loops: Back To Normality</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2007/07/04/multiple-wordpress-loops-back-to-normality/">Multiple WordPress Loops: Back To Normality</a></h1>
-    <p class="meta date">Jul 04, 2007</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a href="/2007/07/04/multiple-wordpress-loops-back-to-normality/"
+              >Multiple WordPress Loops: Back To Normality</a
+            >
+          </h1>
+          <p class="meta date">Jul 04, 2007</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>Having hacked up the <a href="http://www.unintentionallyblank.co.uk/2007/02/18/adventures-with-the-wordpress-loop-sticky-articles/">front page of my WordPress theme with three loops</a> recently, I actually broke a couple of parts of the page. The previous posts link that you can see at the bottom of the <a href="http://www.unintentionallyblank.co.uk">front page</a> now, stopped working because of the three different loops I was using.</p>
+        <div class="content">
+          <p>
+            Having hacked up the
+            <a
+              href="http://www.unintentionallyblank.co.uk/2007/02/18/adventures-with-the-wordpress-loop-sticky-articles/"
+              >front page of my WordPress theme with three loops</a
+            >
+            recently, I actually broke a couple of parts of the page. The
+            previous posts link that you can see at the bottom of the
+            <a href="http://www.unintentionallyblank.co.uk">front page</a> now,
+            stopped working because of the three different loops I was using.
+          </p>
 
-<p>At the time I replaced them with a link to the Archives, but I later received a message from <a href="http://blogosquare.com">Hans</a> to tell me that the link was both not expected to visit the archives and wasn't as useful as a link to the previous 5 posts. At the time I said I would do something about it, displaying bad usability on this site is against what I am trying to achieve, but didn't get the chance, until now.</p>
+          <p>
+            At the time I replaced them with a link to the Archives, but I later
+            received a message from <a href="http://blogosquare.com">Hans</a> to
+            tell me that the link was both not expected to visit the archives
+            and wasn't as useful as a link to the previous 5 posts. At the time
+            I said I would do something about it, displaying bad usability on
+            this site is against what I am trying to achieve, but didn't get the
+            chance, until now.
+          </p>
 
-<h3>Page 2 Of The Front Page</h3>
+          <h3>Page 2 Of The Front Page</h3>
 
-<p>Adding the previous and next posts links back into the theme was the easy part, however clicking on them just kept returning the front page. I needed to use the conditional tags from WordPress to work out when I was on the front page. I started off with a simple</p>
+          <p>
+            Adding the previous and next posts links back into the theme was the
+            easy part, however clicking on them just kept returning the front
+            page. I needed to use the conditional tags from WordPress to work
+            out when I was on the front page. I started off with a simple
+          </p>
 
-<pre><code>&lt;?php if (is_home()) { ?&gt;
+          <pre><code>&lt;?php if (is_home()) { ?&gt;
 // The hacked up loops
 &lt;?php } else { ?&gt;
 // The normal loop for pages other than the front page
 &lt;?php } ?&gt;</code></pre>
 
-<p>However, this didn't work as WordPress considers the second page of the front page to still be home and I still had the same problem.</p>
+          <p>
+            However, this didn't work as WordPress considers the second page of
+            the front page to still be home and I still had the same problem.
+          </p>
 
-<h3>Some Creative Searching</h3>
+          <h3>Some Creative Searching</h3>
 
-<p>I headed to <a href="http://www.google.com">Google</a> for some inspiration and after some creative searches (that I can't replicate now) I found a forum topic on restricting Google to certain pages of your site that gave me the answer. Why a post in an <abbr title="Search Engine Optimisation">SEO</abbr> forum topic was returned, I have no idea, but it helped out. I had to add the following code:</p>
+          <p>
+            I headed to <a href="http://www.google.com">Google</a> for some
+            inspiration and after some creative searches (that I can't replicate
+            now) I found a forum topic on restricting Google to certain pages of
+            your site that gave me the answer. Why a post in an
+            <abbr title="Search Engine Optimisation">SEO</abbr> forum topic was
+            returned, I have no idea, but it helped out. I had to add the
+            following code:
+          </p>
 
-<pre><code>&lt;?php if (is_home() <strong>&amp;&amp; $paged &lt; 2</strong>) { ?&gt;
+          <pre><code>&lt;?php if (is_home() <strong>&amp;&amp; $paged &lt; 2</strong>) { ?&gt;
 // The hacked up loops
 &lt;?php } else { ?&gt;
 // The normal loop for pages other than the front page
 &lt;?php } ?&gt;</code></pre>
 
-<p>Now, if you use the previous link at the bottom of the home page you are taken to a normal looking list of 5 not-quite-so-recent posts in normal format, while the front page still highlights the latest article.</p>
+          <p>
+            Now, if you use the previous link at the bottom of the home page you
+            are taken to a normal looking list of 5 not-quite-so-recent posts in
+            normal format, while the front page still highlights the latest
+            article.
+          </p>
 
-<h3>Credit</h3>
+          <h3>Credit</h3>
 
-<p>Having checked through my history, it was the Webmaster World forums, where I found <a href="http://www.webmasterworld.com/google/3097706.htm">my answer</a> in the post from Ma2T. I also want to thank <a href="http://imjtk.com">JTK</a> for <a href="http://imjtk.com/wordpress-theme-issue-du-jour.php">reminding me of this fix</a>.</p>
+          <p>
+            Having checked through my history, it was the Webmaster World
+            forums, where I found
+            <a href="http://www.webmasterworld.com/google/3097706.htm"
+              >my answer</a
+            >
+            in the post from Ma2T. I also want to thank
+            <a href="http://imjtk.com">JTK</a> for
+            <a href="http://imjtk.com/wordpress-theme-issue-du-jour.php"
+              >reminding me of this fix</a
+            >.
+          </p>
 
-<p>If you have messed around with your WordPress loops, make sure these links still work. If they don't, try the above. Let me know if you have any other problems with multiple loops too, I would love to help.</p>
+          <p>
+            If you have messed around with your WordPress loops, make sure these
+            links still work. If they don't, try the above. Let me know if you
+            have any other problems with multiple loops too, I would love to
+            help.
+          </p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2007/03/29/tweaks-for-readers-for-search-for-social-media/">Tweaks For Readers, For Search, For Social Media</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/02/18/adventures-with-the-wordpress-loop-sticky-articles/">Adventures With The Wordpress Loop: Sticky Articles</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a
+                href="/2007/03/29/tweaks-for-readers-for-search-for-social-media/"
+                >Tweaks For Readers, For Search, For Social Media</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a href="/2007/10/09/future-of-web-apps-day-2-in-detail/"
+                >Future Of Web Apps: Day 2 In Detail</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a
+                href="/2007/02/18/adventures-with-the-wordpress-loop-sticky-articles/"
+                >Adventures With The Wordpress Loop: Sticky Articles</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

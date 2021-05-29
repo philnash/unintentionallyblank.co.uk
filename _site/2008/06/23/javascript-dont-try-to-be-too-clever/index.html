@@ -1,89 +1,182 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>JavaScript - Don't Try To Be Too Clever</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript - Don't Try To Be Too Clever</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2008/06/23/javascript-dont-try-to-be-too-clever/">JavaScript - Don't Try To Be Too Clever</a></h1>
-    <p class="meta date">Jun 23, 2008</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a href="/2008/06/23/javascript-dont-try-to-be-too-clever/"
+              >JavaScript - Don't Try To Be Too Clever</a
+            >
+          </h1>
+          <p class="meta date">Jun 23, 2008</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>You know who's waiting to spoil the day, Internet Explorer. A couple of people reported that my <a href="http://www.unintentionallyblank.co.uk/2007/11/09/fontsizer-reloaded-changing-font-sizes-with-javascript/">font sizing script</a> was not working in IE7 or 6 and I've finally got around to checking out why. When I rewrote the code to add class names to each of the sizing elements, I tweaked a couple of things to make it work better, make the file size smaller and make it more standards compliant code. My mistake? Standards compliance.</p>
+        <div class="content">
+          <p>
+            You know who's waiting to spoil the day, Internet Explorer. A couple
+            of people reported that my
+            <a
+              href="http://www.unintentionallyblank.co.uk/2007/11/09/fontsizer-reloaded-changing-font-sizes-with-javascript/"
+              >font sizing script</a
+            >
+            was not working in IE7 or 6 and I've finally got around to checking
+            out why. When I rewrote the code to add class names to each of the
+            sizing elements, I tweaked a couple of things to make it work
+            better, make the file size smaller and make it more standards
+            compliant code. My mistake? Standards compliance.
+          </p>
 
-<p><a href="http://www.quirksmode.org/bugreports/archives/2005/03/setAttribute_does_not_work_in_IE_when_used_with_th.html">Internet Explorer does not understand <code class="inline">setAttribute</code> when used with style.</a> There are a few lines in which I changed from using <code class="inline">element.style.size = xx</code> to <code class="inline">element.setAttribute('style','size:xx');</code> and this broke the script in IE. Don't try to be too clever, and more importantly for me, check whenever you make any change, no matter how small it may be.</p>
+          <p>
+            <a
+              href="http://www.quirksmode.org/bugreports/archives/2005/03/setAttribute_does_not_work_in_IE_when_used_with_th.html"
+              >Internet Explorer does not understand
+              <code class="inline">setAttribute</code> when used with style.</a
+            >
+            There are a few lines in which I changed from using
+            <code class="inline">element.style.size = xx</code> to
+            <code class="inline">element.setAttribute('style','size:xx');</code>
+            and this broke the script in IE. Don't try to be too clever, and
+            more importantly for me, check whenever you make any change, no
+            matter how small it may be.
+          </p>
 
-<p>Thank you to those who pointed it out, the issue is solved and the script has been tested in Firefox 2, Safari 3, Opera 9.5, IE6 and 7 and it works. Please <a href="http://test.unintentionallyblank.co.uk/fontSizer2-2.js">download it and use it</a> and check out the <a href="http://test.unintentionallyblank.co.uk/fontsizer.html">working demo with the updated script</a>.</p>
+          <p>
+            Thank you to those who pointed it out, the issue is solved and the
+            script has been tested in Firefox 2, Safari 3, Opera 9.5, IE6 and 7
+            and it works. Please
+            <a href="http://test.unintentionallyblank.co.uk/fontSizer2-2.js"
+              >download it and use it</a
+            >
+            and check out the
+            <a href="http://test.unintentionallyblank.co.uk/fontsizer.html"
+              >working demo with the updated script</a
+            >.
+          </p>
 
-<h3>Using the Script</h3>
+          <h3>Using the Script</h3>
 
-<p>To use the script, download it using the link above and save with a suitable name (fontsizer.js is a good example). Upload it to your site and add the following code to the <code class="inline">&lt;head&gt;</code> of the page you want to use it on:</p>
-<pre><code>&lt;script type="text/javascript" src="fontsizer.js"&gt;
+          <p>
+            To use the script, download it using the link above and save with a
+            suitable name (fontsizer.js is a good example). Upload it to your
+            site and add the following code to the
+            <code class="inline">&lt;head&gt;</code> of the page you want to use
+            it on:
+          </p>
+          <pre><code>&lt;script type="text/javascript" src="fontsizer.js"&gt;
 &lt;/script&gt;</code></pre>
 
-<p>Then you need to include an element, a <code class="inline">&lt;div&gt;</code> for example, with the id <code class="inline">fontControls</code>. The script uses that element to append the font size controllers to when the page loads.</p>
+          <p>
+            Then you need to include an element, a
+            <code class="inline">&lt;div&gt;</code> for example, with the id
+            <code class="inline">fontControls</code>. The script uses that
+            element to append the font size controllers to when the page loads.
+          </p>
 
-<p>Then, load up your page and it should work. If you need any more help, please <a href="http://www.unintentionallyblank.co.uk/contact/">get in touch</a> and I will do my best to help you out.</p>
+          <p>
+            Then, load up your page and it should work. If you need any more
+            help, please
+            <a href="http://www.unintentionallyblank.co.uk/contact/"
+              >get in touch</a
+            >
+            and I will do my best to help you out.
+          </p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2007/11/09/fontsizer-reloaded-changing-font-sizes-with-javascript/">FontSizer Reloaded - Changing Font Sizes With JavaScript</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2006/08/02/fontsizing/">First Go With The DOM - Changing Font Sizes</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/03/29/tweaks-for-readers-for-search-for-social-media/">Tweaks For Readers, For Search, For Social Media</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a
+                href="/2007/11/09/fontsizer-reloaded-changing-font-sizes-with-javascript/"
+                >FontSizer Reloaded - Changing Font Sizes With JavaScript</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a href="/2006/08/02/fontsizing/"
+                >First Go With The DOM - Changing Font Sizes</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a
+                href="/2007/03/29/tweaks-for-readers-for-search-for-social-media/"
+                >Tweaks For Readers, For Search, For Social Media</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

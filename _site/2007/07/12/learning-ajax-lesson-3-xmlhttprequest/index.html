@@ -1,51 +1,111 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Learning AJAX: Lesson 3 - XMLHttpRequest</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Learning AJAX: Lesson 3 - XMLHttpRequest</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2007/07/12/learning-ajax-lesson-3-xmlhttprequest/">Learning AJAX: Lesson 3 - XMLHttpRequest</a></h1>
-    <p class="meta date">Jul 12, 2007</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a href="/2007/07/12/learning-ajax-lesson-3-xmlhttprequest/"
+              >Learning AJAX: Lesson 3 - XMLHttpRequest</a
+            >
+          </h1>
+          <p class="meta date">Jul 12, 2007</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>After setting out the groundwork for my <abbr title="Asynchronous Javascript And XML">AJAX</abbr> example by creating a <a href="http://www.unintentionallyblank.co.uk/2007/07/06/learning-ajax-lesson-1-dont-use-ajax/">random quote generator in <abbr title="Hypertext PreProcessor">PHP</abbr></a> then <a href="http://www.unintentionallyblank.co.uk/2007/07/09/learning-ajax-lesson-2-adding-a-link-using-the-dom/">using the <abbr title="Document Object Model">DOM</abbr> to add a link</a> that will perform the AJAX function, I am now ready to start communicating with the server and loading up data without refreshing the page. To do so I need to get to grips with the <code class="inline">XMLHttpRequest</code> object.</p>
+        <div class="content">
+          <p>
+            After setting out the groundwork for my
+            <abbr title="Asynchronous Javascript And XML">AJAX</abbr> example by
+            creating a
+            <a
+              href="http://www.unintentionallyblank.co.uk/2007/07/06/learning-ajax-lesson-1-dont-use-ajax/"
+              >random quote generator in
+              <abbr title="Hypertext PreProcessor">PHP</abbr></a
+            >
+            then
+            <a
+              href="http://www.unintentionallyblank.co.uk/2007/07/09/learning-ajax-lesson-2-adding-a-link-using-the-dom/"
+              >using the <abbr title="Document Object Model">DOM</abbr> to add a
+              link</a
+            >
+            that will perform the AJAX function, I am now ready to start
+            communicating with the server and loading up data without refreshing
+            the page. To do so I need to get to grips with the
+            <code class="inline">XMLHttpRequest</code> object.
+          </p>
 
-<h3>A Bit Of Background</h3>
+          <h3>A Bit Of Background</h3>
 
-<p><a href="http://en.wikipedia.org/wiki/XMLHttpRequest">XMLHttpRequest</a> is not yet a <abbr title="World Wide Web Consortium">W3C</abbr> standard, but there is a <a href="http://www.w3.org/TR/XMLHttpRequest/">working draft</a>. It was first implemented by Microsoft in Outlook before making its way to Internet Explorer 5 as an ActiveX Object. Then the Mozilla project got their hands on it, implementing it as a native browser object in Mozilla. The other browsers fell in line soon after. It is now the basis of AJAX and powers most of the web applications available online today.</p>
+          <p>
+            <a href="http://en.wikipedia.org/wiki/XMLHttpRequest"
+              >XMLHttpRequest</a
+            >
+            is not yet a
+            <abbr title="World Wide Web Consortium">W3C</abbr> standard, but
+            there is a
+            <a href="http://www.w3.org/TR/XMLHttpRequest/">working draft</a>. It
+            was first implemented by Microsoft in Outlook before making its way
+            to Internet Explorer 5 as an ActiveX Object. Then the Mozilla
+            project got their hands on it, implementing it as a native browser
+            object in Mozilla. The other browsers fell in line soon after. It is
+            now the basis of AJAX and powers most of the web applications
+            available online today.
+          </p>
 
-<p>Sadly, even having pioneered this object, Microsoft's Internet Explorer tends to make life difficult for developers because XMLHttpRequest is an ActiveX object (except in <abbr title="Internet Explorer">IE</abbr>7 where it is now a native object). To create one you need the following javascript:</p>
+          <p>
+            Sadly, even having pioneered this object, Microsoft's Internet
+            Explorer tends to make life difficult for developers because
+            XMLHttpRequest is an ActiveX object (except in
+            <abbr title="Internet Explorer">IE</abbr>7 where it is now a native
+            object). To create one you need the following javascript:
+          </p>
 
-<pre><code>var XHR = new ActiveXObject("Microsoft.XMLHTTP");</code></pre>
+          <pre><code>var XHR = new ActiveXObject("Microsoft.XMLHTTP");</code></pre>
 
-<p>All other browsers that support XMLHttpRequest require the following:</p>
+          <p>
+            All other browsers that support XMLHttpRequest require the
+            following:
+          </p>
 
-<pre><code>var XHR = new XMLHttpRequest();</code></pre>
+          <pre><code>var XHR = new XMLHttpRequest();</code></pre>
 
-<p>Once you have your XMLHttpRequest object, the methods are all the same, so it is best to create a function that returns one regardless of browser. I have done this using try and catch, try to create the native object first and, if that doesn't work, the ActiveX version, if neither work I am going to return false so that I can halt the script in another part.</p>
+          <p>
+            Once you have your XMLHttpRequest object, the methods are all the
+            same, so it is best to create a function that returns one regardless
+            of browser. I have done this using try and catch, try to create the
+            native object first and, if that doesn't work, the ActiveX version,
+            if neither work I am going to return false so that I can halt the
+            script in another part.
+          </p>
 
-<h3>Cross Browser XMLHttpRequest</h3>
+          <h3>Cross Browser XMLHttpRequest</h3>
 
-<pre><code>function XHR() {
+          <pre><code>function XHR() {
   try { // try the native object
     return new XMLHttpRequest();
     }
@@ -56,49 +116,83 @@
       }
   }</code></pre>
 
-<p>The final part of this mini series will be posted shortly, where I finish off my example by using the XMLHttpRequest to get my data from the server.</p>
+          <p>
+            The final part of this mini series will be posted shortly, where I
+            finish off my example by using the XMLHttpRequest to get my data
+            from the server.
+          </p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/11/02/learning-ajax-lesson-4-using-the-xmlhttprequest-to-get-your-data/">Learning AJAX: Lesson 4 - Using The XMLHttpRequest To Get Your Data</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a
+                href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/"
+                >Version Targeting For IE8, Developer Wars, My Thoughts</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a href="/2007/10/09/future-of-web-apps-day-2-in-detail/"
+                >Future Of Web Apps: Day 2 In Detail</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a
+                href="/2007/11/02/learning-ajax-lesson-4-using-the-xmlhttprequest-to-get-your-data/"
+                >Learning AJAX: Lesson 4 - Using The XMLHttpRequest To Get Your
+                Data</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

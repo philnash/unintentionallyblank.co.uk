@@ -1,83 +1,160 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>IE6 Crashes Repeatedly With Floats, Comments And Inputs</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>IE6 Crashes Repeatedly With Floats, Comments And Inputs</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2007/11/14/ie6-crashes-repeatedly-with-floats-comments-and-inputs/">IE6 Crashes Repeatedly With Floats, Comments And Inputs</a></h1>
-    <p class="meta date">Nov 14, 2007</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a
+              href="/2007/11/14/ie6-crashes-repeatedly-with-floats-comments-and-inputs/"
+              >IE6 Crashes Repeatedly With Floats, Comments And Inputs</a
+            >
+          </h1>
+          <p class="meta date">Nov 14, 2007</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>A weird Internet Explorer 6 bug hit me at work recently. One page on a client's site repeatedly crashed IE6. Not one of the usual <abbr title="Cascading Style Sheets">CSS</abbr> support bugs that can be solved with a bit of tweaking and reloading the page to see if it worked, every time I visited this particular page in IE6 the browser just bombed out.</p>
+        <div class="content">
+          <p>
+            A weird Internet Explorer 6 bug hit me at work recently. One page on
+            a client's site repeatedly crashed IE6. Not one of the usual
+            <abbr title="Cascading Style Sheets">CSS</abbr> support bugs that
+            can be solved with a bit of tweaking and reloading the page to see
+            if it worked, every time I visited this particular page in IE6 the
+            browser just bombed out.
+          </p>
 
-<p>An hour of headaches and starting up the decrepit browser over and over again lead me to the cause of the problem, a seemingly innocent <code class="inline">&lt;input type="button" /&gt;</code>. Comment out the input and the page loaded, leave it in and IE6 lost it. For the record, IE7 handled the page superbly. But having found the cause of the crashing to be an input, the problems weren't over, I couldn't just remove the button as it was necessary for saving the form on the page. More investigation was needed.</p>
+          <p>
+            An hour of headaches and starting up the decrepit browser over and
+            over again lead me to the cause of the problem, a seemingly innocent
+            <code class="inline">&lt;input type="button" /&gt;</code>. Comment
+            out the input and the page loaded, leave it in and IE6 lost it. For
+            the record, IE7 handled the page superbly. But having found the
+            cause of the crashing to be an input, the problems weren't over, I
+            couldn't just remove the button as it was necessary for saving the
+            form on the page. More investigation was needed.
+          </p>
 
-<h3>The IE Duplicate Characters Bug</h3>
+          <h3>The IE Duplicate Characters Bug</h3>
 
-<p>After a while I decided to replace the input with text, to see whether that would have any adverse effects and it was the right thing to do! The text appeared twice on the page and I instantly searched for any documentation of duplicating text in IE6. <a href="http://www.positioniseverything.net/explorer/dup-characters.html">Position Is Everything came to the rescue with this explanation of the IE duplicate characters bug</a>. It turned out that a combination of floats and comments or hidden elements causes text to duplicate if it is in a particular spot. In my case, there was an input in that spot and rather than duplicating the input, the browser just gave up.</p>
+          <p>
+            After a while I decided to replace the input with text, to see
+            whether that would have any adverse effects and it was the right
+            thing to do! The text appeared twice on the page and I instantly
+            searched for any documentation of duplicating text in IE6.
+            <a
+              href="http://www.positioniseverything.net/explorer/dup-characters.html"
+              >Position Is Everything came to the rescue with this explanation
+              of the IE duplicate characters bug</a
+            >. It turned out that a combination of floats and comments or hidden
+            elements causes text to duplicate if it is in a particular spot. In
+            my case, there was an input in that spot and rather than duplicating
+            the input, the browser just gave up.
+          </p>
 
-<p>A bit of fiddling with comments and moving hidden content around finally left the page in a state to be viewed safely by IE6 again. Sometimes Internet Explorer amuses me, this just confused me for a long time, had I not replaced the input with text I could even still be pondering it. It goes to show that with a lot of time and a bit of luck, you can avoid (most) IE bugs and get your pages back in working order.</p>
+          <p>
+            A bit of fiddling with comments and moving hidden content around
+            finally left the page in a state to be viewed safely by IE6 again.
+            Sometimes Internet Explorer amuses me, this just confused me for a
+            long time, had I not replaced the input with text I could even still
+            be pondering it. It goes to show that with a lot of time and a bit
+            of luck, you can avoid (most) IE bugs and get your pages back in
+            working order.
+          </p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2006/08/02/fontsizing/">First Go With The DOM - Changing Font Sizes</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a
+                href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/"
+                >Version Targeting For IE8, Developer Wars, My Thoughts</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a href="/2007/10/09/future-of-web-apps-day-2-in-detail/"
+                >Future Of Web Apps: Day 2 In Detail</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a href="/2006/08/02/fontsizing/"
+                >First Go With The DOM - Changing Font Sizes</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

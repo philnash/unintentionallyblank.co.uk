@@ -1,86 +1,182 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>My New Front Page: Adventures With The Wordpress Loop</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>My New Front Page: Adventures With The Wordpress Loop</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2007/02/16/my-new-front-page-adventures-with-the-wordpress-loop/">My New Front Page: Adventures With The Wordpress Loop</a></h1>
-    <p class="meta date">Feb 16, 2007</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a
+              href="/2007/02/16/my-new-front-page-adventures-with-the-wordpress-loop/"
+              >My New Front Page: Adventures With The Wordpress Loop</a
+            >
+          </h1>
+          <p class="meta date">Feb 16, 2007</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>If you are looking at the front page of my blog, you will see the layout of the posts is quite different to most other blogs. The home page displays the latest post, then the latest article, then a few more posts. There are a number of posts out there showing <a href="http://www.maxpower.ca/wordpress-hack-sticky-adhesive-kubrick/2005/05/03/">how to display a sticky post</a>, even displaying a <a href="http://shaunandrews.com/2006/07/14/wordpress-sticky-posts/">news post as sticky for only a day or two</a> but none of them quite did everything I wanted them to do. So, after a while looking through the <a href="http://codex.wordpress.org/The_Loop">codex article on the loop </a> and scratching my head, I finally got down and worked it out myself, here's how.</p>
+        <div class="content">
+          <p>
+            If you are looking at the front page of my blog, you will see the
+            layout of the posts is quite different to most other blogs. The home
+            page displays the latest post, then the latest article, then a few
+            more posts. There are a number of posts out there showing
+            <a
+              href="http://www.maxpower.ca/wordpress-hack-sticky-adhesive-kubrick/2005/05/03/"
+              >how to display a sticky post</a
+            >, even displaying a
+            <a href="http://shaunandrews.com/2006/07/14/wordpress-sticky-posts/"
+              >news post as sticky for only a day or two</a
+            >
+            but none of them quite did everything I wanted them to do. So, after
+            a while looking through the
+            <a href="http://codex.wordpress.org/The_Loop"
+              >codex article on the loop
+            </a>
+            and scratching my head, I finally got down and worked it out myself,
+            here's how.
+          </p>
 
-<h3>First A Bit About What I Wanted And Why</h3>
+          <h3>First A Bit About What I Wanted And Why</h3>
 
-<p>I started this blog in order to encourage myself to learn how to code on the web and to share that with anyone else trying. I started doing so, adding commenting on industry news every now and again too, and then <a href="http://www.unintentionallyblank.co.uk/2006/09/30/out-of-the-blue-a-job/">I got a job</a>. This decreased the time I could allocate to teaching myself about the web and posting on the blog, so I had to refactor my priorities a bit. I wanted to use the blog for personal thoughts and opinions as well as writing on my chosen topic. However, I didn't want to fill up my front page with totally irrelevant stuff, thus I had the idea of an articles section that displayed the latest article on the front page regardless of how many other posts were made. It would be a place I could advertise as my best posts.</p>
-<p>I looked around and found many different ways of creating sticky posts that stuck right at the top of the page. This isn't what I wanted, as visitors to the front page would see the first article over and over and think there were no updates. These sticky posts are all very well for news stories that will be replaced after a while, but not long term articles. So I got to work (and got it wrong first time) and now you see the results on my blog.</p>
+          <p>
+            I started this blog in order to encourage myself to learn how to
+            code on the web and to share that with anyone else trying. I started
+            doing so, adding commenting on industry news every now and again
+            too, and then
+            <a
+              href="http://www.unintentionallyblank.co.uk/2006/09/30/out-of-the-blue-a-job/"
+              >I got a job</a
+            >. This decreased the time I could allocate to teaching myself about
+            the web and posting on the blog, so I had to refactor my priorities
+            a bit. I wanted to use the blog for personal thoughts and opinions
+            as well as writing on my chosen topic. However, I didn't want to
+            fill up my front page with totally irrelevant stuff, thus I had the
+            idea of an articles section that displayed the latest article on the
+            front page regardless of how many other posts were made. It would be
+            a place I could advertise as my best posts.
+          </p>
+          <p>
+            I looked around and found many different ways of creating sticky
+            posts that stuck right at the top of the page. This isn't what I
+            wanted, as visitors to the front page would see the first article
+            over and over and think there were no updates. These sticky posts
+            are all very well for news stories that will be replaced after a
+            while, but not long term articles. So I got to work (and got it
+            wrong first time) and now you see the results on my blog.
+          </p>
 
-<h3>The Basics</h3>
+          <h3>The Basics</h3>
 
-<p>Pulling this off was harder than I thought and here is why. To do this I needed to display the latest post, no matter what, then I needed to display the latest article (from the articles category), given that it wasn't the latest post. If the two coincided, I needed to show the next latest article. Finally, I had to show a few more posts beow them, ensuring that neither the latest post, nor the latest article appeared.</p>
+          <p>
+            Pulling this off was harder than I thought and here is why. To do
+            this I needed to display the latest post, no matter what, then I
+            needed to display the latest article (from the articles category),
+            given that it wasn't the latest post. If the two coincided, I needed
+            to show the next latest article. Finally, I had to show a few more
+            posts beow them, ensuring that neither the latest post, nor the
+            latest article appeared.
+          </p>
 
-<p>Tomorrow, I will show the code and how many times I had to go around the Wordpress Loop to achieve this. Ultimately, I think this is a different concept to sticky news posts and I hope it can help out.</p>
+          <p>
+            Tomorrow, I will show the code and how many times I had to go around
+            the Wordpress Loop to achieve this. Ultimately, I think this is a
+            different concept to sticky news posts and I hope it can help out.
+          </p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/02/18/adventures-with-the-wordpress-loop-sticky-articles/">Adventures With The Wordpress Loop: Sticky Articles</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a href="/2007/10/09/future-of-web-apps-day-2-in-detail/"
+                >Future Of Web Apps: Day 2 In Detail</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a
+                href="/2007/02/18/adventures-with-the-wordpress-loop-sticky-articles/"
+                >Adventures With The Wordpress Loop: Sticky Articles</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a
+                href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/"
+                >Version Targeting For IE8, Developer Wars, My Thoughts</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

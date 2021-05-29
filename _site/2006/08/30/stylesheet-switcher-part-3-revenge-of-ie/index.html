@@ -1,91 +1,186 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Stylesheet Switcher - Part 3: Revenge Of IE</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Stylesheet Switcher - Part 3: Revenge Of IE</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2006/08/30/stylesheet-switcher-part-3-revenge-of-ie/">Stylesheet Switcher - Part 3: Revenge Of IE</a></h1>
-    <p class="meta date">Aug 30, 2006</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a href="/2006/08/30/stylesheet-switcher-part-3-revenge-of-ie/"
+              >Stylesheet Switcher - Part 3: Revenge Of IE</a
+            >
+          </h1>
+          <p class="meta date">Aug 30, 2006</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>I was just running through my examples yesterday evening, checking they work in <abbr title="Internet Explorer 7">IE7</abbr> when to my horror my <a href="http://www.unintentionallyblank.co.uk/2006/08/18/stylesheet-switcher-part-2/">stylesheet switcher</a> failed miserably. I ran to IE6 to see if I had overlooked the problem for IE in general and it turned out that I had. I guess that since the majority of visitors to this site use Firefox (in which the function works perfectly) no-one else had noticed either. The strange thing was that it was only <a href="http://test.unintentionallyblank.co.uk/switcher2.html">the final version</a> that didn't work, <a href="http://test.unintentionallyblank.co.uk/switcher.html">the first version</a>, using just links rather than the dropdown box, did work. This means that the stylesheet switching function was working fine and there was a problem with the dropdown box.</p>
-<h3>What Was Wrong?</h3>
-<p>Frustratingly enough, the <code class="inline">onChange</code> event didn't seem to be firing when I used the dropdown box. So I headed back to the code to find the problem. Turns out that IE, in all it's wisdom, doesn't consider <code class="inline">onChange</code> an attribute that you can set with the standard <code class="inline">setAttribute</code> function (unlike <em>all</em> other browsers).</p>
-<pre><code>drop.setAttribute("onChange", &raquo;<br>"setStyleSheet(this.options[this.selectedIndex].value)")</code></pre>
-<p>Instead, you need to set the <code class="inline">onChange</code> like so:</p>
-<pre><code>drop.onchange = function() &raquo;<br>{ setStyleSheet(this.options[this.selectedIndex].value) };</code></pre>
-<p>(Non line breaks signified by &raquo;)</p>
-<h3>Fixed!</h3>
-<p>Simple, but it worked. So the really finished article is available to <a href="http://test.unintentionallyblank.co.uk/switcher1.html" title="See the final demo of the stylesheet switcher">view</a> and <a href="http://test.unintentionallyblank.co.uk/switcher1.js">download</a>.</p>
-<p>I did add a couple of other changes to the final product for accessibility reasons. I gave the dropdown box a label to signify what it did and provided the form with a title to explain it's use when moused over. If you want to style your label and dropdown box, the form has been given an id of "linkBox". So styling the dropdown box is as easy as setting up your <abbr title="Cascading Style Sheets">CSS</abbr> as so:</p>
-<pre><code>#linkBox select {
+        <div class="content">
+          <p>
+            I was just running through my examples yesterday evening, checking
+            they work in <abbr title="Internet Explorer 7">IE7</abbr> when to my
+            horror my
+            <a
+              href="http://www.unintentionallyblank.co.uk/2006/08/18/stylesheet-switcher-part-2/"
+              >stylesheet switcher</a
+            >
+            failed miserably. I ran to IE6 to see if I had overlooked the
+            problem for IE in general and it turned out that I had. I guess that
+            since the majority of visitors to this site use Firefox (in which
+            the function works perfectly) no-one else had noticed either. The
+            strange thing was that it was only
+            <a href="http://test.unintentionallyblank.co.uk/switcher2.html"
+              >the final version</a
+            >
+            that didn't work,
+            <a href="http://test.unintentionallyblank.co.uk/switcher.html"
+              >the first version</a
+            >, using just links rather than the dropdown box, did work. This
+            means that the stylesheet switching function was working fine and
+            there was a problem with the dropdown box.
+          </p>
+          <h3>What Was Wrong?</h3>
+          <p>
+            Frustratingly enough, the <code class="inline">onChange</code> event
+            didn't seem to be firing when I used the dropdown box. So I headed
+            back to the code to find the problem. Turns out that IE, in all it's
+            wisdom, doesn't consider <code class="inline">onChange</code> an
+            attribute that you can set with the standard
+            <code class="inline">setAttribute</code> function (unlike
+            <em>all</em> other browsers).
+          </p>
+          <pre><code>drop.setAttribute("onChange", &raquo;<br>"setStyleSheet(this.options[this.selectedIndex].value)")</code></pre>
+          <p>
+            Instead, you need to set the
+            <code class="inline">onChange</code> like so:
+          </p>
+          <pre><code>drop.onchange = function() &raquo;<br>{ setStyleSheet(this.options[this.selectedIndex].value) };</code></pre>
+          <p>(Non line breaks signified by &raquo;)</p>
+          <h3>Fixed!</h3>
+          <p>
+            Simple, but it worked. So the really finished article is available
+            to
+            <a
+              href="http://test.unintentionallyblank.co.uk/switcher1.html"
+              title="See the final demo of the stylesheet switcher"
+              >view</a
+            >
+            and
+            <a href="http://test.unintentionallyblank.co.uk/switcher1.js"
+              >download</a
+            >.
+          </p>
+          <p>
+            I did add a couple of other changes to the final product for
+            accessibility reasons. I gave the dropdown box a label to signify
+            what it did and provided the form with a title to explain it's use
+            when moused over. If you want to style your label and dropdown box,
+            the form has been given an id of "linkBox". So styling the dropdown
+            box is as easy as setting up your
+            <abbr title="Cascading Style Sheets">CSS</abbr> as so:
+          </p>
+          <pre><code>#linkBox select {
   dropdown box styles...
   }
 #linkBox label {
   label styles...
   }</code></pre>
-<p>I hope you find a use for this piece of code, I will be as soon as I get round to creating a second design for this site!</p>
+          <p>
+            I hope you find a use for this piece of code, I will be as soon as I
+            get round to creating a second design for this site!
+          </p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2006/08/18/stylesheet-switcher-part-2/">Stylesheet Switcher - Part 2</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2006/08/17/the-dom-again-a-style-sheet-switcher/">The DOM again - A Style Sheet Switcher</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a href="/2006/08/18/stylesheet-switcher-part-2/"
+                >Stylesheet Switcher - Part 2</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a href="/2006/08/17/the-dom-again-a-style-sheet-switcher/"
+                >The DOM again - A Style Sheet Switcher</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a
+                href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/"
+                >Version Targeting For IE8, Developer Wars, My Thoughts</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

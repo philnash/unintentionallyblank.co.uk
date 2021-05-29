@@ -1,86 +1,220 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>The Mobile Web Users Cometh, Are You Ready?</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>The Mobile Web Users Cometh, Are You Ready?</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2006/10/12/the-mobile-web-users-cometh-are-you-ready/">The Mobile Web Users Cometh, Are You Ready?</a></h1>
-    <p class="meta date">Oct 12, 2006</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a href="/2006/10/12/the-mobile-web-users-cometh-are-you-ready/"
+              >The Mobile Web Users Cometh, Are You Ready?</a
+            >
+          </h1>
+          <p class="meta date">Oct 12, 2006</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>The Mobile Data Association has recently shown the <a href="http://www.mda-mobiledata.org/Page_Press_PressReleases_LatestStats.asp">steady rise in the usage of mobile phones to access the internet</a>. <a href="http://www.opera.com/">Opera</a> have <a href="http://operawatch.com/news/2006/08/some-opera-statistics-2.html">celebrated</a> more than 5 million active users of <a href="http://www.opera.com/products/mobile/operamini/">Opera Mini</a> and over 1 billion page views by the mobile phone based browser (<cite><a href="http://www.opera.com/company/investors/finance/">Source</a></cite>).</p>
-<h3>What Does This Mean For You?</h3>
-<p>This isn't a problem for you if your website is validly and semantically marked up to the standards of our friends the <a href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>. In fact, it is a bonus, the use of mobile phones to browse the internet means people have more opportunity to find your site and become regular readers. However, if your site is hiding dodgy code, it may not be displaying well at all on these miniature screens. And if your page isn't marked up and laid out well then you could be turning off your potential mobile viewers.</p>
-<h3>How Do I Know?</h3>
-<p>I just started a new job. This may seem off topic, but stay with me. I have to commute from <a href="http://en.wikipedia.org/wiki/Maidstone">Maidstone</a> every morning and normally I read. However, this morning I finished my book and decided to read some of my favourite blogs that I have been unable to keep up with due to my long days, so I turned to my mobile phone. Before I go into details I just want to say that I <em>really</em> don't want this to sound like a major complaint, it's not, I just thought I'd offer up some advice for one of the sites I visited and hope that anyone else who has made the same mistake learns too.</p>
-<h3>Back On Topic</h3>
-<p>Darren Rowse has a fantastic, informative and popular blog with <a href="http://www.problogger.net">ProBlogger</a>, but I bet none of his readers use a mobile phone to visit the site. Why? If you were to visit ProBlogger and check out the sidebar you would be met with a list of links longer than my arm and your arm put together. On a standard graphical browser, this is not a bad thing. However, if you were to visit ProBlogger using Opera Mini as I did this morning, you would find yourself scrolling through all of these links to find the content (you can check this out, even without a mobile, by visiting the <a href="http://www.opera.com/products/mobile/operamini/demo.dml">Opera Mini Simulator</a>).</p>
-<h3>The Solution</h3>
-<p>The reason Darren's sidebar appears first on the page using the miniature browser is due to the way Opera Mini renders pages. Whatever comes first in the mark up, comes first on the page. This is so that normal websites can fit on to tiny mobile phone screens. An understandable reason, even if you have spent <a href="http://nektros.com/2006/07/21/a-7-step-guide-to-fixing-your-wordpress-sidebar-in-internet-bloody-explorer/">hours messing around with your 3 column masterpiece</a>. In ProBlogger's case, the sidebar appears before the content and thus, the longest list of links ever appears before the bit you came to read. There is only one way around this: arrange the content at the top of the mark up for the page and use <abbr title="Cascading Style Sheets">CSS</abbr> to postion the sidebar on the left. Now, any user who visits your site, whatever browser they are using, are guaranteed to see your content first and not have to scroll a mile and a half to find it. As a bonus, this has a small <abbr title="Search Engine Optimisation">SEO</abbr> benefit too, as search engine spiders will see your important content first, not some list of irrelevant links.</p>
-<h3>Is This <em>Really</em> Important?</h3>
-<p>Those statistics at the top of the page aren't for show you know, the use of mobile phones for surfing the web is increasing and alienating users of certain browsers is so 1996. If you want one more important fact, the 9th top use for mobile internet use was mobile communities/blogging (<cite><a href="http://www.mda-mobiledata.org/Page_Press_PressReleases_LatestStats.asp">source</a></cite>).  So if you're blogging and in charge of your site design, make sure you haven't made this mistake. And, if that's not enough, even Google, the number one site for mobile users, has a <a href="http://www.google.com/xhtml">valid mobile web page</a>.</p>
-<p>The mobile web is growing, <em>don't miss out!</em></p>
+        <div class="content">
+          <p>
+            The Mobile Data Association has recently shown the
+            <a
+              href="http://www.mda-mobiledata.org/Page_Press_PressReleases_LatestStats.asp"
+              >steady rise in the usage of mobile phones to access the
+              internet</a
+            >. <a href="http://www.opera.com/">Opera</a> have
+            <a
+              href="http://operawatch.com/news/2006/08/some-opera-statistics-2.html"
+              >celebrated</a
+            >
+            more than 5 million active users of
+            <a href="http://www.opera.com/products/mobile/operamini/"
+              >Opera Mini</a
+            >
+            and over 1 billion page views by the mobile phone based browser
+            (<cite
+              ><a href="http://www.opera.com/company/investors/finance/"
+                >Source</a
+              ></cite
+            >).
+          </p>
+          <h3>What Does This Mean For You?</h3>
+          <p>
+            This isn't a problem for you if your website is validly and
+            semantically marked up to the standards of our friends the
+            <a href="http://www.w3.org"
+              ><abbr title="World Wide Web Consortium">W3C</abbr></a
+            >. In fact, it is a bonus, the use of mobile phones to browse the
+            internet means people have more opportunity to find your site and
+            become regular readers. However, if your site is hiding dodgy code,
+            it may not be displaying well at all on these miniature screens. And
+            if your page isn't marked up and laid out well then you could be
+            turning off your potential mobile viewers.
+          </p>
+          <h3>How Do I Know?</h3>
+          <p>
+            I just started a new job. This may seem off topic, but stay with me.
+            I have to commute from
+            <a href="http://en.wikipedia.org/wiki/Maidstone">Maidstone</a> every
+            morning and normally I read. However, this morning I finished my
+            book and decided to read some of my favourite blogs that I have been
+            unable to keep up with due to my long days, so I turned to my mobile
+            phone. Before I go into details I just want to say that I
+            <em>really</em> don't want this to sound like a major complaint,
+            it's not, I just thought I'd offer up some advice for one of the
+            sites I visited and hope that anyone else who has made the same
+            mistake learns too.
+          </p>
+          <h3>Back On Topic</h3>
+          <p>
+            Darren Rowse has a fantastic, informative and popular blog with
+            <a href="http://www.problogger.net">ProBlogger</a>, but I bet none
+            of his readers use a mobile phone to visit the site. Why? If you
+            were to visit ProBlogger and check out the sidebar you would be met
+            with a list of links longer than my arm and your arm put together.
+            On a standard graphical browser, this is not a bad thing. However,
+            if you were to visit ProBlogger using Opera Mini as I did this
+            morning, you would find yourself scrolling through all of these
+            links to find the content (you can check this out, even without a
+            mobile, by visiting the
+            <a href="http://www.opera.com/products/mobile/operamini/demo.dml"
+              >Opera Mini Simulator</a
+            >).
+          </p>
+          <h3>The Solution</h3>
+          <p>
+            The reason Darren's sidebar appears first on the page using the
+            miniature browser is due to the way Opera Mini renders pages.
+            Whatever comes first in the mark up, comes first on the page. This
+            is so that normal websites can fit on to tiny mobile phone screens.
+            An understandable reason, even if you have spent
+            <a
+              href="http://nektros.com/2006/07/21/a-7-step-guide-to-fixing-your-wordpress-sidebar-in-internet-bloody-explorer/"
+              >hours messing around with your 3 column masterpiece</a
+            >. In ProBlogger's case, the sidebar appears before the content and
+            thus, the longest list of links ever appears before the bit you came
+            to read. There is only one way around this: arrange the content at
+            the top of the mark up for the page and use
+            <abbr title="Cascading Style Sheets">CSS</abbr> to postion the
+            sidebar on the left. Now, any user who visits your site, whatever
+            browser they are using, are guaranteed to see your content first and
+            not have to scroll a mile and a half to find it. As a bonus, this
+            has a small
+            <abbr title="Search Engine Optimisation">SEO</abbr> benefit too, as
+            search engine spiders will see your important content first, not
+            some list of irrelevant links.
+          </p>
+          <h3>Is This <em>Really</em> Important?</h3>
+          <p>
+            Those statistics at the top of the page aren't for show you know,
+            the use of mobile phones for surfing the web is increasing and
+            alienating users of certain browsers is so 1996. If you want one
+            more important fact, the 9th top use for mobile internet use was
+            mobile communities/blogging (<cite
+              ><a
+                href="http://www.mda-mobiledata.org/Page_Press_PressReleases_LatestStats.asp"
+                >source</a
+              ></cite
+            >). So if you're blogging and in charge of your site design, make
+            sure you haven't made this mistake. And, if that's not enough, even
+            Google, the number one site for mobile users, has a
+            <a href="http://www.google.com/xhtml">valid mobile web page</a>.
+          </p>
+          <p>The mobile web is growing, <em>don't miss out!</em></p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2007/11/15/opera-mini-4-released-the-death-of-the-handheld-style-sheet/">Opera Mini 4 Released & The Death Of The Handheld Style Sheet</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a href="/2007/10/09/future-of-web-apps-day-2-in-detail/"
+                >Future Of Web Apps: Day 2 In Detail</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a
+                href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/"
+                >Version Targeting For IE8, Developer Wars, My Thoughts</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a
+                href="/2007/11/15/opera-mini-4-released-the-death-of-the-handheld-style-sheet/"
+                >Opera Mini 4 Released & The Death Of The Handheld Style
+                Sheet</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>

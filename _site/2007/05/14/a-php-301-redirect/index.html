@@ -1,92 +1,179 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>A PHP 301 Redirect</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>A PHP 301 Redirect</title>
 
-  <meta name="author" content="Phil Nash">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Phil Nash" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
 
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
-  <!--[if lt IE 9]>
-    <script src="/javascripts/html5shiv.js"></script>
-  <![endif]-->
-</head>
-<body>
-  <header>
-    <h1><a href="/">Unintentionally Blank</a></h1>
-    <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
-  </header>
-  <section id="main">
-    <article>
-  <header>
-    <h1><a href="/2007/05/14/a-php-301-redirect/">A PHP 301 Redirect</a></h1>
-    <p class="meta date">May 14, 2007</p>
-    <p class="meta author">by Phil Nash</p>
-  </header>
+    <link
+      href="https://fonts.googleapis.com/css?family=Vollkorn"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <!--[if lt IE 9]>
+      <script src="/javascripts/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Unintentionally Blank</a></h1>
+      <p>Phil Nash on the Internet, Web Standards and Accessibility</p>
+    </header>
+    <section id="main">
+      <article>
+        <header>
+          <h1>
+            <a href="/2007/05/14/a-php-301-redirect/">A PHP 301 Redirect</a>
+          </h1>
+          <p class="meta date">May 14, 2007</p>
+          <p class="meta author">by Phil Nash</p>
+        </header>
 
-  <div class="content">
-    <p>A friend pointed out recently that the subdomain my tests and examples are kept on had no index page in the root, so if anyone removed the page name from the address they could access my entire directory. I didn't think that this was a good idea, so I decided to change it. I could have added an index.html file or something else there to protect the directory, but I wanted to link it in with the rest of the blog and learn something at the same time.</p>
+        <div class="content">
+          <p>
+            A friend pointed out recently that the subdomain my tests and
+            examples are kept on had no index page in the root, so if anyone
+            removed the page name from the address they could access my entire
+            directory. I didn't think that this was a good idea, so I decided to
+            change it. I could have added an index.html file or something else
+            there to protect the directory, but I wanted to link it in with the
+            rest of the blog and learn something at the same time.
+          </p>
 
-<p>I created a page on which I could display all of my tests and examples, it's the <a href="http://www.unintentionallyblank.co.uk/test-centre/">Test Centre</a> that you can find linked above now. As a page in my blog, it is part of the main domain, so how do I connect the subdomain http://test.unintentionallyblank.co.uk to the page http://www.unintentionallyblank.co.uk/test-centre/?</p>
+          <p>
+            I created a page on which I could display all of my tests and
+            examples, it's the
+            <a href="http://www.unintentionallyblank.co.uk/test-centre/"
+              >Test Centre</a
+            >
+            that you can find linked above now. As a page in my blog, it is part
+            of the main domain, so how do I connect the subdomain
+            http://test.unintentionallyblank.co.uk to the page
+            http://www.unintentionallyblank.co.uk/test-centre/?
+          </p>
 
-<h3>301 Redirect</h3>
+          <h3>301 Redirect</h3>
 
-<p>There are many ways of redirecting a page, and many that I am not going to talk about as there is <a href="http://www.google.com/search?hl=en&amp;q=redirecting+web+pages&amp;btnG=Search">plenty of information</a> out there on which method is the best. As far as I have seen, the only redirect to perform is a 301 redirect. It means "permanently moved" and it works for browsers and search bots.</p>
+          <p>
+            There are many ways of redirecting a page, and many that I am not
+            going to talk about as there is
+            <a
+              href="http://www.google.com/search?hl=en&amp;q=redirecting+web+pages&amp;btnG=Search"
+              >plenty of information</a
+            >
+            out there on which method is the best. As far as I have seen, the
+            only redirect to perform is a 301 redirect. It means "permanently
+            moved" and it works for browsers and search bots.
+          </p>
 
-<p>I decided to implement the redirect in <abbr title="Hypertext PreProcessor">PHP</abbr> as it made sense to me. The code is simple, all you need to do is deliver a couple of new <abbr title="Hyper Text Transfer Protocol">http</abbr> headers to whatever was visiting the page you wanted to redirect, one to tell the visitor the page has moved and one to say where. Here it is:</p>
+          <p>
+            I decided to implement the redirect in
+            <abbr title="Hypertext PreProcessor">PHP</abbr> as it made sense to
+            me. The code is simple, all you need to do is deliver a couple of
+            new <abbr title="Hyper Text Transfer Protocol">http</abbr> headers
+            to whatever was visiting the page you wanted to redirect, one to
+            tell the visitor the page has moved and one to say where. Here it
+            is:
+          </p>
 
-<pre><code>&lt;?php
+          <pre><code>&lt;?php
 Header( "HTTP/1.1 301 Moved Permanently" );
 Header( "Location: REDIRECT URL HERE" );
 ?&gt;</code></pre>
 
-<p>That's all there is to it! In my case I entered the above into Notepad, saved it as index.php and uploaded it to the root of <a href="http://test.unintentionallyblank.co.uk">http://test.unintentionallyblank.co.uk</a>, now visiting it brings you to the test centre at http://www.unintentionallyblank.co.uk/test-centre/. Try it out. If you want to replace other pages, just name your file accordingly and place it in the relevant location.</p>
+          <p>
+            That's all there is to it! In my case I entered the above into
+            Notepad, saved it as index.php and uploaded it to the root of
+            <a href="http://test.unintentionallyblank.co.uk"
+              >http://test.unintentionallyblank.co.uk</a
+            >, now visiting it brings you to the test centre at
+            http://www.unintentionallyblank.co.uk/test-centre/. Try it out. If
+            you want to replace other pages, just name your file accordingly and
+            place it in the relevant location.
+          </p>
 
-<p>There are other ways to do this, different languages and scripts or editing the .htaccess file, but this seemed to be the easiest way to go for me, hopefully it can help you too.</p>
+          <p>
+            There are other ways to do this, different languages and scripts or
+            editing the .htaccess file, but this seemed to be the easiest way to
+            go for me, hopefully it can help you too.
+          </p>
+        </div>
 
-  </div>
+        <footer>
+          <h3>Related posts</h3>
 
-  <footer>
-    <h3>Related posts</h3>
-    
-    <ul>
-      <li><a href="/2007/10/09/future-of-web-apps-day-2-in-detail/">Future Of Web Apps: Day 2 In Detail</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/">Version Targeting For IE8, Developer Wars, My Thoughts</a></li>
-    </ul>
-    
-    <ul>
-      <li><a href="/2006/09/19/if-internet-explorer-then-do-something-else-a-how-to/">IF Internet Explorer THEN Do Something Else (A How To...)</a></li>
-    </ul>
-    
-  </footer>
-</article>
+          <ul>
+            <li>
+              <a href="/2007/10/09/future-of-web-apps-day-2-in-detail/"
+                >Future Of Web Apps: Day 2 In Detail</a
+              >
+            </li>
+          </ul>
 
-  </section>
-  <footer>
-    <p><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/test-centre/">Test Centre</a></p>
-    <p>Copyright &copy; 2012 <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> | <a href="http://twitter.com/philnash" rel="me external">@philnash</a></p>
-  </footer>
+          <ul>
+            <li>
+              <a
+                href="/2008/01/23/version-targeting-for-ie8-developer-wars-my-thoughts/"
+                >Version Targeting For IE8, Developer Wars, My Thoughts</a
+              >
+            </li>
+          </ul>
 
-  <div id="disclaimer">
-    <p>Unintentionally Blank is <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts on web development from 2006-2008. Any code or opinions may be out of date.</p>
-  </div>
+          <ul>
+            <li>
+              <a
+                href="/2006/09/19/if-internet-explorer-then-do-something-else-a-how-to/"
+                >IF Internet Explorer THEN Do Something Else (A How To...)</a
+              >
+            </li>
+          </ul>
+        </footer>
+      </article>
+    </section>
+    <footer>
+      <p>
+        <a href="/">Home</a> | <a href="/about/">About</a> |
+        <a href="/test-centre/">Test Centre</a>
+      </p>
+      <p>
+        Copyright &copy; 2012
+        <a href="http://philnash.co.uk" rel="me external">Phil Nash</a> |
+        <a href="http://twitter.com/philnash" rel="me external">@philnash</a>
+      </p>
+    </footer>
 
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-144643-2']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_setAccount', 'UA-41472902-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-</body>
+    <div id="disclaimer">
+      <p>
+        Unintentionally Blank is
+        <a rel="me" href="http://twitter.com/philnash">Phil Nash</a>'s thoughts
+        on web development from 2006-2008. Any code or opinions may be out of
+        date.
+      </p>
+    </div>
+
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(["_setAccount", "UA-144643-2"]);
+      _gaq.push(["_trackPageview"]);
+      _gaq.push(["_setAccount", "UA-41472902-1"]);
+      _gaq.push(["_trackPageview"]);
+      (function () {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src =
+          ("https:" == document.location.protocol
+            ? "https://ssl"
+            : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
 </html>
